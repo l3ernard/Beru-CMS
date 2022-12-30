@@ -1,0 +1,69 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: #333;
+}
+
+
+
+
+
+
+/* Admin Control Panel Style */
+
+
+#page-wrapper{
+    margin-top: 1rem;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    width:80%;
+}
+
+
+#admin-panel{
+    border-radius:5px;
+    outline:1px solid;
+    display:flex;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+#admin-panel-menu{
+    background-color:#ccc;
+}
+
+.admin-panel-user{
+    padding:0.5rem;
+    border-bottom:1px dotted;
+}
+
+#admin-panel-menu ul {
+list-style-type: none;
+}
+
+#admin-panel-menu li{
+    padding:0.5rem;
+}
+
+#admin-panel-menu li:nth-child(even) {
+    background: rgba(0,0,0, 0.1);
+}
+#admin-panel-menu li a{
+    text-decoration: none;
+    color:#000;
+}
+
+#admin-panel-menu a:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#admin-panel-content{
+    background:#eee;
+    flex-grow: 1;
+}
