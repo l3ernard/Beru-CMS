@@ -21,20 +21,32 @@
                 <p class="admin-panel-user">Welcome <b>Admin</b></p> <!-- replace a with php get current user -->
 
                 <ul>
-                    <li><a href="#">User Control</a></li>
+                    <li><a href="?=userpanel">User Control</a></li>
                     
-                    <li><a href="#">Page Control</a></li>
+                    <li><a href="?p=pagepanel">Page Control</a></li>
 
-                    <li><a href="#">Theme</a></li>
+                    <li><a href="?p=theme">Theme</a></li>
 
                     
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="?p=logout">Logout</a></li>
                 </ul>
         
             </div>
 
             <div id="admin-panel-content">
                 <!-- current control content -->
+
+                <?php 
+                $page;
+                if(isset($_GET['p'])){
+                    $page = $_GET['p'];
+                    include('pages//' . $page . '.php');
+                } else {
+                    include('pages/userpanel.php');
+                }
+
+
+                ?>
             </div>
         </div>
 
