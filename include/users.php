@@ -33,12 +33,12 @@ class User
         $loginUser = $statement->fetch();
 
         if (!$loginUser) {
-            return 'usernotfound';
+            return 'Login Information Incorrect!';
         } else {
             session_regenerate_id(true);
             $_SESSION['logged_in'] = true;
             $_SESSION['uid'] = $loginUser['id'];
-            return 'Login Success';
+            return 'Login Success!';
         }
     }
 

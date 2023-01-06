@@ -7,6 +7,8 @@ $users = new User($pdo);
 if (!isset($_SESSION['logged_in'])) {
     header("Refresh:1; url=../?p=home", true, 303);
 } else {
+    include('../include/admincontrol.php');
+    $admincontrol = new AdminControl($pdo);
 
     $getuserid = $_SESSION['uid'] ?? 0;
 

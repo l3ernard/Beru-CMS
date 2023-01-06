@@ -4,8 +4,6 @@ include('include/users.php');
 
 $users = new User($pdo);
 
-
-
 ?>
 
 <!doctype html>
@@ -16,11 +14,11 @@ $users = new User($pdo);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Beru CMS</title>
+  <title>Augustinus Service</title>
   <meta name="description" content="">
   <meta name="author" content="Bernard">
 
-  <meta property="og:title" content="">
+  <meta property="og:title" content="Augustinus Service">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:description" content="">
@@ -36,6 +34,7 @@ $users = new User($pdo);
     <header>
       <div id="brand">
         <h3>Augustinus Service</h3>
+        <sub>IT Support & Solutions</sub>
       </div>
       <nav>
         <ul>

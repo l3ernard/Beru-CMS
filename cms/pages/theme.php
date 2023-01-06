@@ -1,1 +1,5 @@
-theme
+<?php
+
+echo 'Theme Panel';
+
+?>

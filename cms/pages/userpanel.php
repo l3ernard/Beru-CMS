@@ -1,1 +1,5 @@
-userpanel
+<?php
+
+echo 'User Panel';
+
+?>
