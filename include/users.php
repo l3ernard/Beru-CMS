@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 class User
 {
     /* Properties */
@@ -19,8 +21,8 @@ class User
 
     public function getLoggedInUser($sessionID)
     {
-
-        return $this->conn->query("SELECT username FROM users WHERE id=$sessionID")->fetch();
+        $loggedinusername = $this->conn->query("SELECT username FROM users WHERE id=$sessionID")->fetch();
+        return $loggedinusername['username'];
     }
 
     public function UserLogin($user, $pass)
@@ -33,8 +35,35 @@ class User
         if (!$loginUser) {
             return 'usernotfound';
         } else {
+            session_regenerate_id(true);
+            $_SESSION['logged_in'] = true;
+            $_SESSION['uid'] = $loginUser['id'];
             return 'Login Success';
         }
     }
+
+
+    public function UserLogout()
+    {
+        $_SESSION = [];
+
+        session_destroy();
+
+        return 'User logged out.';
+    }
+
+
+    public function IsUserAdmin($uid)
+    {
+        $sql = "SELECT userlevel FROM users WHERE id=:uid";
+        $statement = $this->conn->prepare($sql);
+        $statement->execute(['uid' => $uid]);
+        $userlevel = $statement->fetch();
+
+        return $userlevel['userlevel'];
+    }
+
+
+
 }
 ?>
